@@ -1,0 +1,697 @@
+/* =====================================
+   STUDY HEADER
+===================================== */
+.study-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    min-width: 0;
+}
+
+.study-header-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.study-subject {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #0f172a;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.study-counter {
+    margin-top: 3px;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.back-button {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 0;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #334155;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+}
+
+.back-button:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateX(-2px);
+}
+
+
+/* =====================================
+   INTERACTIVE CARD
+===================================== */
+.interactive-card,
+.card,
+.result-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 24px;
+    overflow: visible;
+    box-shadow:
+        0 1px 3px rgba(15, 23, 42, 0.04),
+        0 8px 20px -8px rgba(15, 23, 42, 0.06);
+}
+
+.interactive-card {
+    position: relative;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.interactive-card input {
+    user-select: text;
+    cursor: text;
+}
+
+.card-label {
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+
+/* =====================================
+   CHECK BUTTON (Dùng cho cả MCQ và Fill)
+===================================== */
+.check-answer-button {
+    flex: 0 0 auto;
+    min-height: 50px;
+    padding: 0 36px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.30);
+    transition: all 0.15s ease;
+}
+
+.check-answer-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.40);
+}
+
+.check-answer-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.check-answer-button:disabled {
+    background: #cbd5e1;
+    box-shadow: none;
+}
+
+.mcq-actions,
+.fill-blank-actions {
+    margin-top: 18px;
+    text-align: center;
+}
+
+
+/* =====================================
+   EXPLANATION
+===================================== */
+.explanation-section {
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px 18px;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border: 1px solid #bae6fd;
+    border-radius: 14px;
+    overflow: visible;
+}
+
+.explanation-title {
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #0369a1;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.feedback-explanation {
+    width: 100%;
+    line-height: 1.7;
+    color: #0c4a6e;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    font-size: 14.5px;
+}
+
+.auto-not-learned-note {
+    font-size: 13px;
+    color: #be123c;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #fff1f2;
+    border-left: 3px solid #f43f5e;
+    border-radius: 8px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   BOTTOM NAV (giữ lại — phòng khi cần dùng)
+===================================== */
+.bottom-nav-wrapper {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.bottom-nav {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+}
+
+.bottom-nav-button {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 52px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background: #ffffff;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.15s ease;
+}
+
+.bottom-nav-button .nav-icon { font-size: 15px; line-height: 1; }
+.bottom-nav-button .nav-label { overflow: hidden; text-overflow: ellipsis; }
+
+.bottom-nav-button.prev {
+    border: 1.5px solid #e2e8f0;
+    color: #475569;
+}
+
+.bottom-nav-button.prev:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateX(-2px);
+}
+
+.bottom-nav-button.next {
+    border: 1.5px solid #bfdbfe;
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.bottom-nav-button.next:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+    transform: translateX(2px);
+}
+
+
+/* =====================================
+   TAP ZONES - NHẤP TRÁI/PHẢI MÀN HÌNH
+===================================== */
+.tap-zone {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 18%;
+    max-width: 140px;
+    z-index: 40;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.tap-zone-left {
+    left: 0;
+    background: linear-gradient(to right, rgba(37, 99, 235, 0.03), transparent);
+}
+
+.tap-zone-right {
+    right: 0;
+    background: linear-gradient(to left, rgba(37, 99, 235, 0.03), transparent);
+}
+
+.tap-zone-arrow {
+    font-size: 32px;
+    font-weight: 900;
+    color: #2563eb;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    user-select: none;
+}
+
+.tap-zone:hover {
+    background: rgba(37, 99, 235, 0.10);
+}
+
+.tap-zone:hover .tap-zone-arrow {
+    opacity: 0.7;
+    transform: scale(1);
+}
+
+.tap-zone:active {
+    background: rgba(37, 99, 235, 0.20);
+}
+
+.tap-zone:active .tap-zone-arrow {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+body:has(.fill-blank-inline-input:focus) .tap-zone {
+    pointer-events: none;
+}
+
+.interactive-card,
+.study-header,
+.bottom-nav-wrapper {
+    position: relative;
+    z-index: 45;
+}
+
+
+/* =====================================
+   BOMB TIMER WIDGET - ĐỒNG HỒ QUẢ BOM
+===================================== */
+
+.bomb-widget {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px 6px 8px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 999px;
+    flex: 0 0 auto;
+    transition: all 0.25s ease;
+}
+
+/* --- Hình quả bom --- */
+.bomb-graphic {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+}
+
+.bomb-body {
+    position: absolute;
+    bottom: 0;
+    left: 4px;
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle at 35% 30%, #4b5563, #1f2937 60%, #111827);
+    border-radius: 50%;
+    box-shadow:
+        inset -3px -3px 6px rgba(0, 0, 0, 0.4),
+        inset 3px 3px 4px rgba(255, 255, 255, 0.08);
+}
+
+.bomb-shine {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    filter: blur(0.5px);
+}
+
+.bomb-cap {
+    position: absolute;
+    top: 3px;
+    left: 13px;
+    width: 6px;
+    height: 4px;
+    background: linear-gradient(to bottom, #6b7280, #374151);
+    border-radius: 2px 2px 0 0;
+}
+
+.bomb-fuse {
+    position: absolute;
+    top: 0;
+    left: 16px;
+    width: 2px;
+    height: 6px;
+    background: #92400e;
+    border-radius: 1px;
+    transform: rotate(15deg);
+    transform-origin: bottom center;
+}
+
+.bomb-spark {
+    position: absolute;
+    top: -4px;
+    left: -3px;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #fbbf24, #f59e0b 40%, transparent 70%);
+    border-radius: 50%;
+    animation: sparkFlicker 0.6s ease-in-out infinite alternate;
+    filter: blur(0.5px);
+}
+
+@keyframes sparkFlicker {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* --- Số thời gian --- */
+.bomb-time {
+    font-size: 16px;
+    font-weight: 800;
+    color: #1d4ed8;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    min-width: 24px;
+    text-align: center;
+    transition: color 0.25s ease;
+}
+
+/* --- Trạng thái cảnh báo (≤ 10s) --- */
+.bomb-widget.warning {
+    background: #fef2f2;
+    border-color: #fecaca;
+    animation: bombShake 0.5s ease-in-out infinite;
+}
+
+.bomb-widget.warning .bomb-body {
+    background: radial-gradient(circle at 35% 30%, #7f1d1d, #991b1b 60%, #450a0a);
+    box-shadow:
+        inset -3px -3px 6px rgba(0, 0, 0, 0.5),
+        inset 3px 3px 4px rgba(255, 255, 255, 0.1),
+        0 0 12px rgba(239, 68, 68, 0.5);
+}
+
+.bomb-widget.warning .bomb-spark {
+    background: radial-gradient(circle, #fca5a5, #ef4444 40%, transparent 70%);
+    animation: sparkFlickerFast 0.25s ease-in-out infinite alternate;
+}
+
+.bomb-widget.warning .bomb-time {
+    color: #dc2626;
+}
+
+@keyframes sparkFlickerFast {
+    0% {
+        transform: scale(1) rotate(-5deg);
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(1.5) rotate(5deg);
+        opacity: 1;
+    }
+}
+
+@keyframes bombShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px) rotate(-1deg); }
+    75% { transform: translateX(2px) rotate(1deg); }
+}
+
+
+/* =====================================
+   HIỆU ỨNG NỔ
+===================================== */
+
+.bomb-widget.explode {
+    animation: bombExplode 0.8s ease-out forwards;
+}
+
+@keyframes bombExplode {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    20% {
+        transform: scale(1.4);
+        filter: brightness(2) drop-shadow(0 0 20px #fbbf24);
+    }
+    50% {
+        transform: scale(2.2);
+        filter: brightness(3) drop-shadow(0 0 30px #ef4444);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+        filter: brightness(0);
+    }
+}
+
+body.screen-shake {
+    animation: screenShake 0.4s ease-in-out;
+}
+
+@keyframes screenShake {
+    0%, 100% { transform: translate(0, 0); }
+    20% { transform: translate(-3px, 2px); }
+    40% { transform: translate(3px, -2px); }
+    60% { transform: translate(-2px, -3px); }
+    80% { transform: translate(2px, 3px); }
+}
+
+
+/* =====================================
+   TAP HINT OVERLAY - NHẮC NHỞ KHI MỞ APP
+===================================== */
+.tap-hint-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tap-hint-overlay.show { opacity: 1; }
+.tap-hint-overlay.hide { opacity: 0; }
+
+.tap-hint-card {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 28px 24px 22px;
+    text-align: center;
+    box-shadow: 0 20px 60px -12px rgba(15, 23, 42, 0.35);
+    transform: scale(0.9);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.tap-hint-overlay.show .tap-hint-card {
+    transform: scale(1);
+}
+
+.tap-hint-icon {
+    font-size: 44px;
+    margin-bottom: 10px;
+    display: inline-block;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.tap-hint-title {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #2563eb;
+    margin-bottom: 18px;
+}
+
+.tap-hint-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.tap-hint-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 13.5px;
+    color: #334155;
+    line-height: 1.45;
+}
+
+.tap-hint-item b { color: #0f172a; }
+
+.tap-hint-symbol {
+    flex: 0 0 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    color: #1d4ed8;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.tap-hint-btn {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.30);
+    transition: all 0.15s ease;
+}
+
+.tap-hint-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.40);
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+@media (max-width: 560px) {
+    .study-header { margin-bottom: 12px; }
+    .back-button {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+        border-radius: 10px;
+    }
+    .study-subject { font-size: 13px; }
+    .study-counter { font-size: 11px; }
+
+    .interactive-card,
+    .card,
+    .result-card {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .card-label { font-size: 10px; margin-bottom: 10px; }
+
+    .mcq-actions,
+    .fill-blank-actions {
+        margin-top: 14px;
+    }
+
+    .check-answer-button {
+        width: 100%;
+        min-height: 48px;
+        padding: 0 20px;
+    }
+
+    .feedback-explanation {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .bottom-nav { gap: 8px; }
+    .bottom-nav-button {
+        min-height: 48px;
+        font-size: 13px;
+        padding: 8px 12px;
+        gap: 6px;
+    }
+
+    /* Tap zones */
+    .tap-zone {
+        width: 22%;
+        max-width: none;
+    }
+
+    .tap-zone-arrow {
+        font-size: 28px;
+    }
+
+    /* Bomb timer */
+    .bomb-widget {
+        padding: 5px 10px 5px 6px;
+        gap: 6px;
+    }
+
+    .bomb-graphic {
+        width: 28px;
+        height: 28px;
+        flex-basis: 28px;
+    }
+
+    .bomb-body {
+        width: 20px;
+        height: 20px;
+    }
+
+    .bomb-cap {
+        left: 11px;
+        top: 3px;
+    }
+
+    .bomb-fuse {
+        left: 13px;
+    }
+
+    .bomb-time {
+        font-size: 14px;
+        min-width: 22px;
+    }
+
+    /* Tap hint */
+    .tap-hint-card { padding: 22px 18px 18px; border-radius: 16px; }
+    .tap-hint-icon { font-size: 38px; }
+    .tap-hint-item { font-size: 12.5px; padding: 10px 12px; gap: 10px; }
+    .tap-hint-symbol { flex-basis: 36px; height: 36px; font-size: 14px; }
+}

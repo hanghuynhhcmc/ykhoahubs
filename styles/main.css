@@ -1,0 +1,12 @@
+/* =====================================
+   Y KHOA HUB - MAIN CSS
+   Import tất cả file con
+===================================== */
+
+@import url("base.css");
+@import url("auth.css");
+@import url("dashboard.css");
+@import url("study.css");
+@import url("mcq.css");
+@import url("fill-blank.css");
+@import url("pages.css");
